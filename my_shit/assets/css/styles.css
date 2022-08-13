@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+/* font-family: 'Kaushan Script', cursive; */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #e88482;
+    /* width: 100vw; */
+    width: 1920dpx;
+}
+
+.container_01 {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav__logo {
+    position: absolute;
+    left: 360px;
+    top: 29px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 30px; 
+}
+
+.nav__main {
+    position: absolute;
+    /* right: 360px; */
+    top: 29px;
+    margin-left: 100px;
+}
+
+.nav__wrapper {
+    display: flex;
+}
+
+.nav__element {
+    margin-left: 57px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #FFF; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px; 
+    padding-top: 25px;
+}
+
+.nav__element:after {
+    display: inline-block;
+    content: "";
+    background-color: white;
+    width: 50px;
+    height: 3px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+}
+
+.shopping__cart {
+    /* background-color: rgb(255, 255, 255); */
+    position: absolute;
+    left: 1484px;
+    top: 37px;
+    width: 18px;
+    height: 15px;
+    z-index: 13;
+    content: url("../images/shopping__cart.png");
+}
+
+h2 {
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 400;
+    font-size: 72px;
+    color: white;
+    /* position: relative; */
+    margin: 0 auto;
+    margin-top: 185px;
+    /* align-items: center; */
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 150px;
+    color: white;
+    text-transform: uppercase;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}

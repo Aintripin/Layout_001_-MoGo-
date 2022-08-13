@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+/* font-family: 'Kaushan Script', cursive; */
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    line-height: 1.6;
+}
+
+.header {
+    padding-top: 30px;          /* move down the whole header by 30px downwards*/
+    width: 100%;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;   /* so we got 'header logo' and 'nav'. What "space beetween"
+                                        does is it simply strectches the two to the corners so
+                                        there'll be space between 'em */
+    align-items: center;            /* align items vertically*/
+}
+
+.header__logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav__link {
+    color: white;
+    text-decoration: none;
+    transition: all .1s linear;
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px; 
+    position: relative;
+}
+
+.nav__link:after {
+    content: "";
+    display: block;         /* so it'll actually be displayed */
+    width: 100%;            /*  100% of the parent's width (will only work if the parent's position
+                            is set to 'relative' and child's set to 'absolute' */
+    height: 3px;
+    background: #FFF;
+    position: absolute;     /* 'absolute' relative to 'relative' that is the property of the parent
+                                that is 'nav__link'*/
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    /* display: none; */         /* hide the bars if the element's not hovered over*/
+
+    /* to make the animation look smooth: */
+
+    opacity: 0;
+
+    transition: all .1s linear;
+
+}
+
+.nav__link:hover {
+    color: #fce38a;
+}
+
+.nav__link:hover:after, .nav__link.active:after {
+    display: block;         /* once the link is hovered over the bar will appear underneath it */
+    color: #fce38a;
+    opacity: 1;
+}
+
+.nav__link.active {
+    color: #fce38a;
+}
+
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background: url(../images/intro_01.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro__inner {
+    color: white;
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+
+    text-align: center;  /* so the child elements (e.g. the 'learn more' button gets centered */
+}
+
+.intro__title {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 150px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+}
+
+.intro__title:after {
+    content: "";
+    display: block;
+    background: white;
+    width: 60px;
+    height: 3px;
+    justify-content: center;
+
+    margin: 60px auto;             /* center the bar AND add the 60 px margin (top & bottom) */
+}
+
+.intro__suptitle {
+    margin-bottom: 20px;
+    font-family: 'Kaushan Script', cursive;
+    color: white;
+    font-weight: regular;
+    font-size: 72px;
+    text-align: center;  
+}
+
+.btn {
+    display: inline-block;
+    vertical-align: top;
+
+    border: 3px solid white;  
+    padding: 8px 30px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+
+    transition: all .2s linear;
+}
+
+.btn:hover {
+    background: white;
+    color: #fce38a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.slider {
+    display: flex;
+    margin-top: 30px;
+}
+
+.slider__item {
+    width: 23%;
+    justify-content: space-between;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+
+    padding: 20px 0;
+    /* border-top: 3px solid white; */
+    opacity: .7;
+
+    position: relative; /* cuz we finna use ':before' */
+}
+
+.slider__item:before {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 3px;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    z-index: 1;
+    background: white;
+}
+
+.slider__item.active:before {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 3px;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    z-index: 2;
+    background: linear-gradient(90deg, rgba(243,129,129,1) 0%, rgba(243,129,129,1) 35%, rgba(255,255,255,1) 36%, rgba(255,255,255,1) 100%);
+}
+
+.slider__item.active {
+    opacity: 1;
+}
+
+.slider__number {
+    font-weight: 700;
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+}
+
